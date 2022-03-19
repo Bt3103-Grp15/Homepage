@@ -1,6 +1,5 @@
 <template>
   <div class="index">
-      <!--全部的搜索区域：背景为蓝色照片-->
       <div class="top-search">
           <div>
               <div class="top-text">
@@ -13,16 +12,12 @@
               </div>
           </div>
       </div>
-
       <div class="blog-list">
-          <!--大的for循环-->
           <div class="blog-list-grouping" v-for="item in list" :key="item.id">
-              <!--仅仅描述每个模块的大标题-->
              <div class="grouping-name">
                 {{ item.groupingName }}
              </div>
              <div class="blog-list-main">
-               <!--小的for循环-->
                  <div class="blog-list-item" v-for="cityInfo in item.child" :key="cityInfo.id">
                      <div class="city-name">{{ cityInfo.cityName }}</div>
                      <div class="read-more">Read More</div>
@@ -105,10 +100,10 @@ const list = [
         background-size: cover;
         padding-top: 56px;
         display: flex;
-        flex-direction: row; // 这句话非常关键，这样新创建div就不会换行
-        justify-content: center; // 元素在主轴页面上居中排列
+        flex-direction: row;
+        justify-content: center;
         .top-text {
-            font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;
+            font-family: avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;
             font-size: 30px;
             color: #fff;
             text-align: center;
@@ -157,7 +152,7 @@ const list = [
             }
             .blog-list-main {
                 display: flex;
-                flex-wrap: nowrap; // 控制元素是否换行，默认不换行，wrap是换行
+                flex-wrap: wrap;
                 .blog-list-item {
                     height: 318px;
                     width: 318px;
@@ -169,7 +164,7 @@ const list = [
                     color: #fff;
                     flex-shrink: 0;
                     &:nth-child(3n) {
-                        margin-right: 0px;
+                        margin-right: 0;
                     }
                     .city-name {
                         font-size: 30px;
